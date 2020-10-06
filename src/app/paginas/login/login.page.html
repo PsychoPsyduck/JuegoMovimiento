@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="gold">
+    <ion-title text-center>Juego Movimiento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+
+  <ion-toolbar class="form">
+    <ion-title>Login Jugador</ion-title>
+    <br>
+    <form [formGroup]="form">
+      <ion-item class="full-width-input">
+        <ion-label position='floating'>Mail</ion-label>
+        <ion-input type="text" formControlName="mail"></ion-input> 
+      </ion-item>
+      <br>
+      <ion-item class="full-width-input">
+        <ion-label position='floating'>Contraseña</ion-label>
+        <ion-input type="password" formControlName="clave"></ion-input> 
+      </ion-item>
+      <br>
+      <ion-button [hidden]="ocultarVerificar"  color='success' *ngIf="logeando"  (click)="Entrar()">Entrar</ion-button>
+      <ion-button [hidden]="!ocultarVerificar" color="success" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button>
+      <br>
+    </form>
+  </ion-toolbar>
+</ion-content>
+
+<ion-footer >
+
+  <ion-toolbar class="goldfooter">
+
+    <ion-button color="success" (click)="AutoLog('admin')">Adm</ion-button>
+    <ion-button color="success" (click)="AutoLog('invitado')">Inv</ion-button>
+    <ion-button color="success" (click)="AutoLog('usuario')">Usu</ion-button>
+    <ion-button color="success" (click)="AutoLog('anonimo')">Anon</ion-button>
+    <ion-button color="success" (click)="AutoLog('tester')">Test</ion-button>
+
+  </ion-toolbar>
+</ion-footer>
